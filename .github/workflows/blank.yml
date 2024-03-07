@@ -30,7 +30,7 @@ jobs:
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
         copy "FastConfigVPS_v2.3.exe" "C:\Users\Public\Desktop\FastConfigVPS_v2.3.exe"
     - name: Создание туннелей.
-      run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp --region ap 3389"'
+      run: Start-Process Powershell -ArgumentList '-Noexit -Command ".\ngrok\ngrok.exe tcp 3389"'
     - name: Подключение к CPU 2 - 7 ГБ оперативной памяти - 256 SSD.
       run: cmd /c start.bat
     - name: Сделано успешно! Вы можете закрыть вкладку.
